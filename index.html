@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skin Diary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2em;
+    }
+
+    nav button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    label {
+      display: block;
+      margin: 0.5em 0 0.2em;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+
+    .day {
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .day.recorded {
+      background-color: #ffebcd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Skin Diary</h1>
+
+  <nav>
+    <button onclick="showSection('record')">記録する</button>
+    <button onclick="showSection('calendar')">カレンダー</button>
+  </nav>
+
+  <section id="record" class="active">
+    <h2>症状の記録</h2>
+    <form>
+      <label>日付</label>
+      <input type="date" />
+
+      <label>部位の写真</label>
+      <input type="file" accept="image/*" />
+
+      <label>症状の種類</label>
+      <select>
+        <option>赤み</option>
+        <option>かゆみ</option>
+        <option>腫れ</option>
+        <option>発疹</option>
+      </select>
+
+      <label>痛み・かゆみの程度</label>
+      <input type="range" min="0" max="10" />
+
+      <label>睡眠時間（時間）</label>
+      <input type="number" min="0" max="24" />
+
+      <label>ストレスレベル（1〜5）</label>
+      <input type="number" min="1" max="5" />
+
+      <label>メモ</label>
+      <textarea rows="3"></textarea>
+
+      <button type="submit">保存</button>
+    </form>
+  </section>
+
+  <section id="calendar">
+    <h2>カレンダー表示（例）</h2>
+    <div class="calendar">
+      <div class="day">1</div>
+      <div class="day recorded">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day recorded">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+    </div>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
