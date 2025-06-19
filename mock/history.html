@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>履歴一覧 - Skin Diary</title>
+  <link rel="stylesheet" href="../styles/history.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <h1>記録履歴</h1>
+    <input type="search" placeholder="キーワード検索..." id="search-bar">
+  </header>  <section class="filters">
+    <label for="date-range">期間:</label>
+    <input type="date" id="start-date"> ～ <input type="date" id="end-date"><label for="body-part">部位:</label>
+<select id="body-part">
+  <option value="all">すべて</option>
+  <option value="face">顔</option>
+  <option value="arm">腕</option>
+  <option value="leg">脚</option>
+  <option value="torso">胴体</option>
+</select>
+
+  </section>  <main>
+    <div class="entry">
+      <img src="assets/photo-placeholder.jpg" alt="患部写真" class="thumbnail">
+      <div class="entry-info">
+        <p><strong>日時:</strong> 2025-06-15</p>
+        <p><strong>部位:</strong> 右上腕部内側</p>
+        <p><strong>概要:</strong> 赤みと乾燥が見られる</p>
+        <a href="#" class="detail-button">詳細を見る</a>
+      </div>
+    </div><div class="entry">
+  <img src="assets/photo-placeholder.jpg" alt="患部写真" class="thumbnail">
+  <div class="entry-info">
+    <p><strong>日時:</strong> 2025-06-10</p>
+    <p><strong>部位:</strong> 左ふくらはぎ</p>
+    <p><strong>概要:</strong> かゆみと湿疹</p>
+    <a href="#" class="detail-button">詳細を見る</a>
+  </div>
+</div>
+
+<!-- 他の記録も同様に表示 -->
+
+  </main>
+</body>
+</html>
